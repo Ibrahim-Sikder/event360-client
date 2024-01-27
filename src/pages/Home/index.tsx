@@ -1,4 +1,5 @@
 import EventSection from "./EventSection";
+import GallerySection from "./GallerySection";
 import HeroSection from "./HeroSection";
 import ServiceSection from "./ServiceSection";
 
@@ -8,6 +9,7 @@ const Home = () => {
             <HeroSection/>
             <ServiceSection/>
             <EventSection/>
+            <GallerySection/>
         </div>
     );
 };
