@@ -3,7 +3,7 @@ import Container from "../../ui/Container";
 
 const PriceSection = () => {
     return (
-        <div className="bg-[#070B15] pt-14 text-white ">
+        <div className="bg-[#070B15] pt-14 pb-10 text-white ">
             <Container className="">
                 <div className="text-center mx-auto">
                     <span>pricing</span>
