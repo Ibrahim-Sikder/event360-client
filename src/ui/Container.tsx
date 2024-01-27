@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
-import { cn } from '@/lib/utils';
-
-
+import { cn } from "../lib/utils";
 
 type TContainer = {
     children: ReactNode,
@@ -11,8 +9,8 @@ type TContainer = {
 
 const Container = ({children, className}:TContainer) => {
     return (
-        <div className={cn("p-[10px] w-full max-w-[1280px] max-auto ", className)}>
-            {children}
+        <div className={cn("px-[20px] w-full max-w-[1230px] mx-auto", className)}>
+           {children} 
         </div>
     );
 };

@@ -8,8 +8,8 @@ const NavBar = () => {
         animate={{opacity:1}}
         transition={{delay:1, duration:1 }}
 
-        className='h-12 fixed w-full bg-white z-[9999]'>
-           <nav className=' px-[20px] h-full  w-full max-w-[1220px] mx-auto flex justify-between items-center '>
+        className='h-12  w-full text-white '>
+           <nav className='  h-full  w-full max-w-[1280px] mx-auto flex justify-between items-center '>
            <span className='text-3xl'> Event <b className='text-[#01DBF7]'>360</b></span>
            <ul className='space-x-5'>
            <NavLink to='/'>Home</NavLink>
