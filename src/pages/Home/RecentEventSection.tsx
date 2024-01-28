@@ -14,8 +14,8 @@ const RecentEventSection = () => {
         slidesToScroll: 4,
         initialSlide: 0,
         autoplay: true,
-        speed: 50000000000000000000,
-        autoplaySpeed: 50000000000000000000000,
+        speed: 5000,
+        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 1024,
