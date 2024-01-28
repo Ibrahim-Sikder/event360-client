@@ -1,10 +1,15 @@
+import { Outlet } from "react-router-dom"
+import Sidebar from "./Sidebar"
 
 const AdminLayout = () => {
-    return (
-        <div>
-            <h3>Admin layout </h3>
-        </div>
-    );
-};
+  return (
+    <div className="grid grid-cols-12 ">
+      <Sidebar />
+      <div className="col-span-10">
+        <Outlet />
+      </div>
+    </div>
+  )
+}
 
-export default AdminLayout;
+export default AdminLayout
