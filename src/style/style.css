@@ -19,7 +19,7 @@
     @apply text-white bg-[#01000D] rounded-lg p-4 w-[330px] lg:w-[300px] xl:w-[400px] h-[569px] mx-auto flex flex-col  items-center  
 }
 .btn{
-    @apply bg-[#01DAF8] w-[270px] lg:w-full  h-[52px] text-black mt-5
+    @apply bg-[#01DAF8] w-[270px] lg:w-full h-[40px] md:h-[52px] text-black mt-5
 }
 .priceCard{
     @apply w-full lg:w-[300px] xl:w-[373px] h-[530px] p-5 bg-[#11151E] rounded-md pl-10 pt-10 pb-10   flex flex-col justify-between 

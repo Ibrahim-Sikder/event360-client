@@ -31,9 +31,9 @@ const RevewSection = () => {
                     <div>
                         <h3 className="text-4xl font-bold">What everyone says</h3>
                     </div>
-                    <div className="grid mt-10 grid-cols-3 gap-12">
+                    <div className="grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-12">
                        {
-                        userData.map((user)=><div key={user.id} className="w-[400px] h-[305px] bg-[#070A12] p-8 rounded-md " >
+                        userData.map((user)=><div key={user.id} className="w-full lg:w-[300px] xl:w-[400px] h-[305px] bg-[#070A12] p-8 rounded-md " >
                         <p className="leading-3ding max-w-[40ch]">{user.review}</p>
                         <div className="flex mt-8">
                             <img src={user.img} alt="user" />
