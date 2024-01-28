@@ -1,3 +1,4 @@
+@import './style/RecentEvent.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,4 +14,14 @@ html, body{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+}
+
+
+
+.slick-prev {
+    left: -25px;
+    background: white ;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
 }
