@@ -1,18 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Container from "../../ui/Container"
 import event from "../../assets/images/event6.png"
 import { HiOutlineCheck } from "react-icons/hi"
-const ServiceSection = () => {
+import SectionTitle from "../../components/SectionTitle/SectionTitle"
+
+
+const ServiceSection = ({title, desc} ) => {
 
   return (
     <div className="bg-[#0F172A] py-8">
       <Container className="">
-        <div className="text-white max-w-[600px] mx-auto text-center ">
-          <h2 className="text-4xl font-bold ">Our Service </h2>
-          <p>
-            Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
-          </p>
-        </div>
+        <SectionTitle title='Our Services ' desc=' Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
+            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.'/>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-[54px] ">
           <div className="text-white bg-[#01000D]  p-4 w-[400px] h-[569px] mx-auto flex flex-col  items-center  ">
             <div>

@@ -1,0 +1,21 @@
+import './SectionTitle.css'
+
+export type TTitle = {
+    title:string,
+    desc:string,
+  }
+const SectionTitle = ({title, desc}:TTitle) => {
+
+    return (
+        <div>
+             <div className="text-white max-w-[600px] mx-auto text-center ">
+          <h2 className=" serviceTitle">{title} </h2>
+          <p>
+           {desc}
+          </p>
+        </div>
+        </div>
+    );
+};
+
+export default SectionTitle;

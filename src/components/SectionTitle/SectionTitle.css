@@ -1,0 +1,33 @@
+.serviceTitle{
+    position:relative;
+    z-index: 99;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.serviceTitle::before {
+    position: absolute;
+    content: "";
+    width: 250px;
+    height: 9px;
+    background: #FB923C;
+    z-index: -5;
+    transform: skew(260deg);
+    bottom: 15px;
+    border-radius: 23px 14px 14px 27px;
+    left: 152px;
+}
+
+.serviceTitle::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    background: #FB923C;
+    width: 151px;
+    height: 9px;
+    transform: skew(2deg);
+    bottom: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    right: 115px;
+}
