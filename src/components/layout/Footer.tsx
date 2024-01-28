@@ -4,17 +4,20 @@ const Footer = () => {
     return (
         <div className="bg-[#0F172A] text-white ">
             <Container className="">
-            {/* <span className='text-3xl'> Event <b className='text-[#01DBF7]'>360</b></span> */}
+          
             <hr />
             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 place-content-center place-items-center py-10">
            
-                <ul className="space-y-5 ">
+               <div className="flex">
+               <span className='text-3xl mr-5'> Event <b className='text-[#01DBF7]'>360</b></span>
+               <ul className="space-y-5 ">
                     <li>Product</li>
                     <li>Pricing</li>
                     <li>Overview </li>
                     <li>Browse</li>
                     <li>Accessiblity </li>
                 </ul>
+               </div>
                 <ul className="space-y-5 ">
                     <li>Solutions </li>
                     <li>Brainstorming </li>

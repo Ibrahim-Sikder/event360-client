@@ -1,3 +1,5 @@
+import CustomerSupport from "./CustomerSupport";
+import EventManagement from "./EventManagement";
 import EventSection from "./EventSection";
 import GallerySection from "./GallerySection";
 import HeroSection from "./HeroSection";
@@ -16,6 +18,8 @@ const Home = () => {
             <PriceSection/>
             <RevewSection/>
             <RecentEventSection/>
+            <EventManagement/>
+            <CustomerSupport/>
         </div>
     );
 };
