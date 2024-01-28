@@ -14,7 +14,7 @@ const ServiceSection = ({title, desc} ) => {
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.'/>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-[54px] ">
-          <div className="text-white bg-[#01000D]  p-4 w-[400px] h-[569px] mx-auto flex flex-col  items-center  ">
+          <div className="serviceCard">
             <div>
               <img
                 className="w-[362px] h-[253px] object-cover "
@@ -64,7 +64,7 @@ const ServiceSection = ({title, desc} ) => {
           </div>
           
 
-          <div className="text-white bg-[#01000D]  p-4 w-[400px] h-[569px]  flex flex-col  items-center ">
+          <div className="serviceCard">
 
          
 
@@ -115,11 +115,11 @@ const ServiceSection = ({title, desc} ) => {
                   </div>
                 </div>
               </div>
-              <button className="bg-[#01DAF8] w-[362px] h-[52px] text-black mt-5">View Details</button>
+              <button className="btn">View Details</button>
             </div>
           </div>
 
-          <div className="text-white bg-[#01000D]  p-4 w-[400px] h-[569px] mx-auto flex flex-col  items-center  ">
+          <div className="serviceCard">
             <div>
               <img
                 className="w-[362px] h-[253px] object-cover "

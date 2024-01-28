@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <HeroSection/>
-            <ServiceSection/>
+            <ServiceSection title={undefined} desc={undefined}/>
             <EventSection/>
             <GallerySection/>
             <PriceSection/>

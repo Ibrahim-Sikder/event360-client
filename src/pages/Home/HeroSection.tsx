@@ -5,14 +5,18 @@ import NavBar from "../../components/layout/NavBar";
 import { HiOutlineCheck } from "react-icons/hi";
 const HeroSection = () => {
     return (
-        <div className="bg-[#02011B]  px-8 h-[898px] overflow-hidden">
+        <div className="bg-[#02011B] pb-10  ">
             <Container className="">
                 <NavBar/>
-                <div className="flex gap-5  mt-6  justify-between ">
-                    <div className="w-[736px] h-[708px] mx-atuo">
+                <div className="block lg:flex md:flex-nowrap gap-5 justify-between ">
+                    <div className="w-full md:w-[700px] lg:w-[736px] h-[708px] mx-atuo relative">
                     <img className="w-full h-full object-cover" src={hero} alt="hero" />
+                    <div className="text-white absolute bottom-0   heroContent p-8">
+                        <h3 className="text-[40px] font-extrabold">New Packages For Winter.</h3>
+                        <p>Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultrices faucibus neque velit risus ac id lorem.</p>
                     </div>
-                    <div className="text-white bg-[#01000D]  p-4 w-[520px] h-[708px] mx-auto flex flex-col  items-center  ">
+                    </div>
+                    <div className="text-white bg-[#01000D]  p-4 w-full md:w-[500px]  lg:w-[520px] h-[708px] mx-auto flex flex-col  items-center mt-5 lg:mt-0 ">
                         <h2 className="text-xl  uppercase">Our most popular services</h2>
                         <hr className="mb-5 mt-3 w-[424px]"/>
                         <div className="w-[362px] h-[497px] mx-auto">
@@ -36,7 +40,7 @@ const HeroSection = () => {
                                 
                             </div>
                            
-                            <button className="bg-[#01DAF8] w-[362px] h-[52px] text-black mt-5">View Details</button>
+                            <button className="btn">View Details</button>
                         </div>
                         </div>
                     </div>

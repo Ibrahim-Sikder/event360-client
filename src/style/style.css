@@ -1,0 +1,23 @@
+@layer components{
+   
+
+}
+.recentEventCard {
+    width: 266px !important;
+    height: 294px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.slick-list{
+    text-align: center !important;
+    background:rgba(0, 0, 0, 0.635);
+}
+.heroContent{
+    background:rgba(0, 0, 0, 0.289);
+}
+.serviceCard{
+    @apply text-white bg-[#01000D] rounded-lg p-4 w-[330px] lg:w-[300px] xl:w-[400px] h-[569px] mx-auto flex flex-col  items-center  
+}
+.btn{
+    @apply bg-[#01DAF8] w-[270px] lg:w-full  h-[52px] text-black mt-5
+}

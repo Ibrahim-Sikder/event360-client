@@ -8,7 +8,7 @@ const NavBar = () => {
         animate={{opacity:1}}
         transition={{delay:1, duration:1 }}
 
-        className='h-12  w-full text-white '>
+        className='h-24  w-full text-white '>
            <nav className='  h-full  w-full max-w-[1280px] mx-auto flex justify-between items-center '>
            <span className='text-3xl'> Event <b className='text-[#01DBF7]'>360</b></span>
            <ul className='space-x-5'>

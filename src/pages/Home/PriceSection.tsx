@@ -7,7 +7,7 @@ const PriceSection = () => {
             <Container className="">
                 <div className="text-center mx-auto">
                     <span>pricing</span>
-                    <h3 className="text-4xl font-bold">Package Pricing </h3>
+                    <h3 className="text-[64px] font-bold">Package Pricing </h3>
                 </div>
                 <div className="grid grid-cols-3 place-items-center mt-14 ">
                     <div className="w-full max-w-[373px] h-[530px] p-5 bg-[#11151E] rounded-md pl-10 pt-10 pb-10   flex flex-col justify-between ">

@@ -12,12 +12,12 @@ import gallery9 from '../../assets/images/gallery6.png';
 import gallery10 from '../../assets/images/gallery10.png';
 const GallerySection = () => {
     return (
-        <div className="bg-[#0F172A] pt-[54px] text-white ">
+        <div className="bg-[#0F172A] py-14 text-white ">
             <Container className="">
-                <div className="grid grid-cols-12 place-items-center gap-1">
-                   <div className="col-span-5">
+                <div className="grid grid-cols-12 place-items-center gap-5 lg:gap-1 ">
+                   <div className="lg:col-span-5 col-span-12">
                    <div className="text-white  ">
-                        <h2 className="text-4xl font-bold ">Our Service </h2>
+                   <h2 className=" text-[64px] font-bold ">Gallery </h2>
                         <p className="my-5 max-w-[45ch]">Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultrices faucibus neque velit risus ac id lorem.</p>
                     </div>
 
@@ -58,7 +58,7 @@ const GallerySection = () => {
                   </div>
               </div>
                    </div>
-                   <div className="col-span-7">
+                   <div className="lg:col-span-7 col-span-12 ">
                         <div className="grid grid-cols-4  place-items-center justify-center place-content-center ">
                             <div>
                                 <img src={gallery} alt="gallery" />

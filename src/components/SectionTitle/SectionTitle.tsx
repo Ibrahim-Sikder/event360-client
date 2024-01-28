@@ -10,7 +10,7 @@ const SectionTitle = ({title, desc}:TTitle) => {
         <div>
              <div className="text-white max-w-[600px] mx-auto text-center ">
           <h2 className=" serviceTitle">{title} </h2>
-          <p>
+          <p className='text-[18px]'>
            {desc}
           </p>
         </div>

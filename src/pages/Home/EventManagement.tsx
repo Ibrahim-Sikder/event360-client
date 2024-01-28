@@ -7,7 +7,7 @@ const EventManagement = () => {
             <Container className="">
                 <div className="grid grid-cols-1 place-items-center place-content-center md:grid-cols-2">
                 <div>
-                    <h2 className="text-4xl font-bold"><span className="text-[#01DBF7]">9M+</span> Events Management </h2>
+                    <h2 className="text-5xl font-bold"><span className="text-[#01DBF7]">9M+</span> Events Management </h2>
                     <div className="flex items-center mt-8">
                        <div className=" border border-dotted  mr-5 h-[150px] bg-white"></div>
                       <div>
