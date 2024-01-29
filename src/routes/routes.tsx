@@ -3,6 +3,8 @@ import App from "../App"
 import Home from "../pages/Home"
 import AdminLayout from "../components/layout/AdminLayout"
 import Dashboard from "../pages/Admin/Dashboard"
+import AddEventItem from "../pages/Admin/AddEventItem"
+import EventItemList from "../pages/Admin/AddEventItem/EventItemList"
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "add-event",
+        element: <AddEventItem />,
+      },
+      {
+        path: "event-list",
+        element: <EventItemList />,
       },
     ],
   },
