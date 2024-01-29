@@ -6,6 +6,7 @@ import { TextField } from "@mui/material"
 import { BellOff } from "lucide-react"
 import { useQuery,  } from '@tanstack/react-query';
 import { getServices } from "../../../api/admin/services/services.api"
+import Swal from "sweetalert2"
 
 const EventItemList = () => {
 
@@ -17,6 +18,37 @@ const EventItemList = () => {
     queryFn: getServices
   });
 
+  const handleDelete = id =>{
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to delete this user!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/services/${id}`,{
+                method: "DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                refetch()
+                if(data.deletedCount){
+                    Swal.fire(
+                        'Deleted!',
+                        'Service has been deleted.',
+                        'success'
+                      )
+                }
+            })
+        }
+      })
+
+   
+  }
+
   console.log(data, isLoading, isError)
   if(isLoading){
     return <p>Loading......</p>
@@ -24,6 +56,8 @@ const EventItemList = () => {
   if(isError){
     return <p>somethin went to wrong</p>
   }
+
+
 
 
   return (
@@ -80,19 +114,21 @@ const EventItemList = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>01</td>
+            {
+              data?.map((item, i)=><tr key={item._id}>
+              <td>{i+1}</td>
               <td>
                 <div className="mask   h-[100px] w-[100px] mx-auto ">
                   <img
                     className=" h-full w-full object-cover text-center"
                     alt="img"
+                    src={item.image}
                   />
                 </div>
               </td>
-              <td>Car </td>
-              <td>BMW2343</td>
-              <td>Aminul Hoque </td>
+              <td>{item.name} </td>
+              <td>{item.eventItem}</td>
+              <td>{item.description}</td>
               <td>
                 <div className="editIconWrap edit2">
                   <Link to="/dashboard/update-product">
@@ -109,19 +145,14 @@ const EventItemList = () => {
               </td>
               <td>
                 <div className="editIconWrap">
-                  <FaTrashAlt className="deleteIcon" />
+                  <FaTrashAlt onClick={()=>handleDelete(item._id)} className="deleteIcon" />
                 </div>
               </td>
-            </tr>
+            </tr>)
+            }
           </tbody>
         </table>
-        <div>
-          <h3>event name </h3>
-          {
-            data?.map((item)=><p>{item.eventName
-            }</p>)
-          }
-        </div>
+      
       </div>
     </div>
   )

@@ -15,6 +15,7 @@ const AddEventItem = () => {
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
   
     const onSubmit = (data) => {
+
       const formData = new FormData();
       formData.append("image", data.image[0]);
   
@@ -25,16 +26,11 @@ const AddEventItem = () => {
         .then((res) => res.json())
         .then((imageData) => {
           const imageUrl = imageData.data.url;
-          const {name, title, subtitle, topserviceDescription, topservicetitle,whatWedoDescription, productsDescription,description, } = data
+          const {name, description, eventItem} = data
           const newServices = {
-            name,
-            title,
-            subtitle,
-            topservicetitle,
-            topserviceDescription,
-            whatWedoDescription,
-            productsDescription,
+            name,          
             image: imageUrl,
+            eventItem,
             description,
           
           }
