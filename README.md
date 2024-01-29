@@ -15,7 +15,7 @@
 
 
 ### Client side url link: https://event360-jfgeza9fo-ibrahim-sikder.vercel.app/
-### Server side url link: http://localhost:5000/
+### Server side url link: https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/
 
 
 

@@ -30,7 +30,7 @@ const AddEventItem = () => {
           description,
         }
         console.log(newEvents)
-        fetch("http://localhost:5000/events", {
+        fetch("https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/events", {
           method: "POST",
           headers: {
             "content-type": "application/json",

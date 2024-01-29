@@ -47,7 +47,9 @@ export const router = createBrowserRouter([
         path: "updateEvent/:id",
         element: <UpdateEvent />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/events/${params.id}`),
+          fetch(
+            `https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/events/${params.id}`
+          ),
       },
       {
         path: "add-service",
@@ -61,7 +63,9 @@ export const router = createBrowserRouter([
         path: "updatedservice/:id",
         element: <UpdateServices />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/services/${params.id}`
+          ),
       },
     ],
   },

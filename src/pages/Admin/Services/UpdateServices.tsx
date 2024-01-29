@@ -26,13 +26,16 @@ const UpdateServices = () => {
       image,
       description,
     }
-    fetch(`http://localhost:5000/services/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedServices),
-    })
+    fetch(
+      `https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/services/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedServices),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

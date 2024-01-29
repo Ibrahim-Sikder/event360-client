@@ -29,13 +29,16 @@ const AddService = () => {
           description,
         }
         console.log(newServices)
-        fetch("http://localhost:5000/services", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newServices),
-        })
+        fetch(
+          "https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/services",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newServices),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {
