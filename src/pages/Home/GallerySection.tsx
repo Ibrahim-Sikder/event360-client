@@ -10,7 +10,24 @@ import gallery7 from "../../assets/images/gallery7.png"
 import gallery8 from "../../assets/images/gallery3.png"
 import gallery9 from "../../assets/images/gallery6.png"
 import gallery10 from "../../assets/images/gallery10.png"
+import { motion } from "framer-motion"
+
 const GallerySection = () => {
+  const galleryAnimation = {
+    hidden: {
+      scale: 0,
+    },
+    visible: {
+      scale: 1,
+      transition: {
+        ease: "linear",
+        duration: 2,
+        repeat: Infinity,
+        type: "spring",
+      },
+    },
+  }
+
   return (
     <div className="bg-[#0F172A] py-14 text-white ">
       <Container className="">
@@ -65,8 +82,14 @@ const GallerySection = () => {
           <div className="col-span-12   md:col-span-6 ">
             <div className="grid grid-cols-4  place-items-center justify-center place-content-center ">
               <div>
-                <img src={gallery} alt="gallery" />
-                <img src={gallery2} alt="gallery" />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  src={gallery}
+                  alt="gallery"
+                />
+                <motion.img src={gallery2} alt="gallery" />
               </div>
               <div>
                 <img src={gallery3} alt="gallery" />

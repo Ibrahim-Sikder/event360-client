@@ -8,12 +8,20 @@ import { getServices } from "../../../api/admin/services/services.api"
 import Swal from "sweetalert2"
 
 const ServiceList = () => {
+  type TEvent = {
+    _id: string
+    name: string | number | boolean
+    image: string | undefined
+    eventItem: string
+    description: string
+  }
+
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ["services"],
     queryFn: getServices,
   })
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this user!",
@@ -24,7 +32,7 @@ const ServiceList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://event-360-liart.vercel.app/services/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -101,7 +109,7 @@ const ServiceList = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((item, i) => (
+            {data?.map((item: TEvent, i: number) => (
               <tr key={item._id}>
                 <td>{i + 1}</td>
                 <td>
@@ -115,7 +123,7 @@ const ServiceList = () => {
                 </td>
                 <td>{item.name} </td>
                 <td>{item.eventItem}</td>
-                <td>{item.description}</td>
+                <td>{item.description.slice(0, 10)}</td>
                 <td>
                   <div className="editIconWrap edit2">
                     <Link to={`/admin/updatedservice/${item._id}`}>

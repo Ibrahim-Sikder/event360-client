@@ -3,13 +3,43 @@ import hero from "../../assets/images/hero.jpg"
 import event from "../../assets/images/event2.png"
 import NavBar from "../../components/layout/NavBar"
 import { HiOutlineCheck } from "react-icons/hi"
+import { useEffect, useRef } from "react"
+import { useAnimation, useInView } from 'framer-motion';
 const HeroSection = () => {
+
+// const buttonAnimation = {
+//     hover:{
+//         scale:1.1,
+//         textShadow:"0px 0px 8px rgb(255,255,255)",
+//         boxShadow: "0px 0px 8px rgb(0,0,10)",
+//              transition:{
+//         duration:1,
+//         repeat:Infinity
+//     }
+//     },
+
+// }
+
+const ref = useRef(null)
+const inView = useInView(ref)
+const sectionControl = useAnimation()
+useEffect(()=>{
+    if(inView){
+        sectionControl.start("visible")
+    }
+    else{
+        sectionControl.start("hidden")
+    }
+
+},[inView])
+
+
   return (
-    <div className="bg-[#02011B] pb-10  ">
+    <div  className="bg-[#02011B] pb-10  ">
       <Container className="">
         <NavBar />
         <div className="block lg:flex md:flex-nowrap gap-5 justify-between ">
-          <div className="w-full md:w-[700px] lg:w-[736px]  md:h-[708px] mx-atuo relative">
+          <div data-aos="fade-down" className="w-full md:w-[700px] lg:w-[736px]  md:h-[708px] mx-atuo relative">
             <img
               className="w-full h-full  object-cover"
               src={hero}
@@ -26,7 +56,10 @@ const HeroSection = () => {
               </p>
             </div>
           </div>
-          <div className="text-white bg-[#01000D]  p-4 w-full md:w-[500px]  lg:w-[520px] h-full md:h-[708px] mx-auto flex flex-col  items-center mt-5 lg:mt-0 ">
+        <div ref={ref}>
+        <div
+        data-aos="zoom-in-up"
+           className="text-white bg-[#01000D]  p-4 w-full md:w-[500px]  lg:w-[520px] h-full md:h-[708px] mx-auto flex flex-col  items-center mt-5 lg:mt-0 ">
             <h2 className="text-xl  uppercase">Our most popular services</h2>
             <hr className="mb-5 mt-3 w-[424px]" />
             <div className="w-[320px] md:w-[362px] h-[497px] mx-auto">
@@ -61,6 +94,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </Container>
     </div>

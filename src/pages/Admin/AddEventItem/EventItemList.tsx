@@ -7,14 +7,24 @@ import { BellOff } from "lucide-react"
 import { useQuery } from "@tanstack/react-query"
 import Swal from "sweetalert2"
 import { getEvents } from "../../../api/admin/events/event.api"
+import { Key } from "react"
 
 const EventItemList = () => {
+  type TEvent = {
+    _id: Key | null | undefined
+    id: Key | null | undefined
+    name: string | number | boolean
+    image: string | undefined
+    eventItem: string
+    description: string
+  }
+
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ["events"],
     queryFn: getEvents,
   })
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: unknown) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this user!",
@@ -25,14 +35,14 @@ const EventItemList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/events/${id}`, {
+        fetch(`https://event-360-liart.vercel.app/events/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             refetch()
             if (data.deletedCount) {
-              Swal.fire("Deleted!", "Service has been deleted.", "success")
+              Swal.fire("Deleted!", "Event has been deleted.", "success")
             }
           })
       }
@@ -101,7 +111,7 @@ const EventItemList = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((item, i) => (
+            {data?.map((item: TEvent, i: number) => (
               <tr key={item._id}>
                 <td>{i + 1}</td>
                 <td>
@@ -118,7 +128,7 @@ const EventItemList = () => {
                 <td>{item.description}</td>
                 <td>
                   <div className="editIconWrap edit2">
-                    <Link to={`/admin/updatedservice/${item._id}`}>
+                    <Link to={`/admin/updateEvent/${item._id}`}>
                       <FaEdit className="editIcon" />
                     </Link>
                   </div>

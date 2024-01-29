@@ -1,7 +1,7 @@
 
 // export const getServices = async () => {
 //     async () => {
-//         const res = await fetch('http://localhost:5000/services')
+//         const res = await fetch('https://event-360-liart.vercel.app/services')
 //             .then((res) => res.json())
 
 //         if (!res.success) {
@@ -13,7 +13,7 @@
 // }
 
 export const getServices = async () => {
-    return fetch('http://localhost:5000/services')
+    return fetch('https://event-360-liart.vercel.app/services')
         .then((res) => res.json())
 }
 

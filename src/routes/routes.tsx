@@ -44,10 +44,10 @@ export const router = createBrowserRouter([
         element: <EventItemList />,
       },
       {
-        path: "updatedservice/:id",
+        path: "updateEvent/:id",
         element: <UpdateEvent />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://event-360-liart.vercel.app/events/${params.id}`),
       },
       {
         path: "add-service",
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
         path: "updatedservice/:id",
         element: <UpdateServices />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://event-360-liart.vercel.app/services/${params.id}`),
       },
     ],
   },

@@ -1,7 +1,10 @@
 import { HiOutlineCheck } from "react-icons/hi"
 import Container from "../../ui/Container"
+import { motion } from "framer-motion"
+import { buttonAnimation } from "../../hooks/buttonAnimation"
 
 const PriceSection = () => {
+
   return (
     <div className="bg-[#070B15] pt-14 pb-10 text-white ">
       <Container className="">
@@ -34,7 +37,13 @@ const PriceSection = () => {
               </div>
             </div>
 
-            <button className="btn2 ">Get Your Ticket </button>
+            <motion.button
+              variants={buttonAnimation}
+              whileHover="hover"
+              className="btn2 "
+            >
+              Get Your Ticket{" "}
+            </motion.button>
           </div>
           <div className="priceCard bg-[#0038B4] ">
             <div>
@@ -64,7 +73,13 @@ const PriceSection = () => {
               </div>
             </div>
 
-            <button className="btn2 bg-[#00F8E6] ">Get Your Ticket </button>
+            <motion.button
+              variants={buttonAnimation}
+              whileHover="hover"
+              className="btn2 bg-[#00F8E6] "
+            >
+              Get Your Ticket{" "}
+            </motion.button>
           </div>
           <div className="priceCard">
             <div>
@@ -88,7 +103,13 @@ const PriceSection = () => {
               </div>
             </div>
 
-            <button className="btn2">Get Your Ticket </button>
+            <motion.button
+              variants={buttonAnimation}
+              whileHover="hover"
+              className="btn2"
+            >
+              Get Your Ticket{" "}
+            </motion.button>
           </div>
         </div>
       </Container>

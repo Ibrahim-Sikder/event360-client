@@ -6,8 +6,8 @@ const EventManagement = () => {
     <div className="bg-[#050D14] py-14 text-white ">
       <Container className="">
         <div className="grid grid-cols-1 place-items-center place-content-center md:grid-cols-2">
-          <div>
-            <h2 className=" text-3xl sm:text-6xl font-bold">
+          <div data-aos="fade-down-right">
+            <h2 className=" text-3xl sm:text-5xl font-bold">
               <span className="text-[#01DBF7]">9M+</span> Events Management{" "}
             </h2>
             <div className="flex items-center mt-8">
@@ -31,7 +31,9 @@ const EventManagement = () => {
               </div>
             </div>
           </div>
-          <img src={event} alt="managment" />
+          <div data-aos="fade-left">
+            <img src={event} alt="managment" />
+          </div>
         </div>
       </Container>
     </div>

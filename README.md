@@ -1,5 +1,20 @@
 # React + TypeScript + Vite
 
+### Technology: 
+# React + TypeScript + Vite
+### Feature:
+# Service Crud Operation
+# Admin can create/update/delete Service
+# Event Item Management 
+# Admin can create/update/delete Event Item
+
+
+### Client side url link: https://event360-jfgeza9fo-ibrahim-sikder.vercel.app/
+### Server side url link: https://event-360-liart.vercel.app/
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
