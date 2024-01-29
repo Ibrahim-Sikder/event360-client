@@ -12,7 +12,8 @@
 
 // }
 
-export const getServices = async()=>{
+export const getServices = async () => {
     return fetch('http://localhost:5000/services')
-    .then((res)=>res.json())
-  }
+        .then((res) => res.json())
+}
+

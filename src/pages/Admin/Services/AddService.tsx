@@ -1,4 +1,3 @@
-import "./AddEventItem.css"
 import TextField from "@mui/material/TextField"
 import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered"
 import { Link } from "react-router-dom"
@@ -9,7 +8,7 @@ import Swal from "sweetalert2";
 
 const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN
 
-const AddEventItem = () => {
+const AddService = () => {
 
     const { register, handleSubmit } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
@@ -27,20 +26,20 @@ const AddEventItem = () => {
         .then((imageData) => {
           const imageUrl = imageData.data.url;
           const {name, description, eventItem} = data
-          const newEvents = {
+          const newServices = {
             name,          
             image: imageUrl,
             eventItem,
             description,
           
           }
-          console.log(newEvents)
-          fetch('http://localhost:5000/events', {
+          console.log(newServices)
+          fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'
             },
-            body: JSON.stringify(newEvents)
+            body: JSON.stringify(newServices)
           })
           .then(res=>res.json())
           .then(data=>{
@@ -63,6 +62,11 @@ const AddEventItem = () => {
   
         
      };
+  
+
+
+
+
 
   return (
     <section>
@@ -137,4 +141,4 @@ const AddEventItem = () => {
   )
 }
 
-export default AddEventItem
+export default AddService

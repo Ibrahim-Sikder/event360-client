@@ -6,40 +6,17 @@ import event4 from '../../assets/images/event6.png'
 import event5 from '../../assets/images/event7.png'
 import event6 from '../../assets/images/event8.png'
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { useQuery } from "@tanstack/react-query";
+import { getEvents } from "../../api/admin/events/event.api";
 
 const EventSection = () => {
-    const eventItems = [
-        {
-            id:1,
-            item: 'Event Item - 1',
-            img: event
-        },
-        {
-            id:1,
-            item: 'Event Item - 2',
-            img: event2
-        },
-        {
-            id:1,
-            item: 'Event Item - 3',
-            img: event3
-        },
-        {
-            id:1,
-            item: 'Event Item - 4',
-            img: event4
-        },
-        {
-            id:1,
-            item: 'Event Item - 5',
-            img: event5
-        },
-        {
-            id:1,
-            item: 'Event Item - 6',
-            img: event6
-        },
-    ]
+
+    const { data, isLoading, isError, refetch } = useQuery({
+        queryKey: ["events"],
+        queryFn: getEvents,
+      })
+
+ 
     return (
         <div className="bg-[#0F172A] py-10 text-white ">
             <Container className="">
@@ -48,9 +25,9 @@ const EventSection = () => {
                         ornare viverra. Ultrices faucibus neque velit risus ac id lorem.' />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-[54px] place-content-center place-items-center">
                   {
-                    eventItems.map((event)=>  <div key={event.id} className="  md:w-[320px] xl:w-[340px] h-[282px] p-5 bg-[#000000] rounded-md ">
-                    <h5 className="mb-2">{event.item}</h5>
-                <img className="" src={event.img} alt="event" />
+                    data.map((event)=>  <div key={event._id} className="  md:w-[320px] xl:w-[340px] h-[282px] p-5 bg-[#000000] rounded-md ">
+                    <h5 className="mb-2">{event.name}</h5>
+                <img className="" src={event.image} alt="event" />
 
                 </div>)
                   }

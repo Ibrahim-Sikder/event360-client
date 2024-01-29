@@ -80,6 +80,52 @@ const Sidebar = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion className="dashboardAccordion" expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className='expandIcon' />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography>
+         <b>Services </b>
+          </Typography>
+         
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          <NavLink
+          to="/admin/add-service"
+          className={({ isActive }) =>
+            cn(
+              "p-2 bg-[#01000D] rounded-md transition-all truncate flex items-center gap-2 lg:gap-5 ",
+              {
+                " text-white bg-[#0F172A] ": isActive,
+              }
+            )
+          }
+        >
+          <ListChecks />
+          <span>Add Service </span>
+        </NavLink>
+          </Typography>
+          <Typography>
+          <NavLink
+          to="/admin/service-list"
+          className={({ isActive }) =>
+            cn(
+              "p-2 bg-[#01000D] rounded-md transition-all truncate flex items-center gap-2 lg:gap-5 ",
+              {
+                " text-white bg-[#0F172A] ": isActive,
+              }
+            )
+          }
+        >
+          <ListChecks />
+          <span>Service List </span>
+        </NavLink>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
       </nav>
     </aside>
   )

@@ -5,6 +5,10 @@ import AdminLayout from "../components/layout/AdminLayout"
 import Dashboard from "../pages/Admin/Dashboard"
 import AddEventItem from "../pages/Admin/AddEventItem"
 import EventItemList from "../pages/Admin/AddEventItem/EventItemList"
+import UpdateEvent from "../pages/Admin/AddEventItem/UpdateEvent"
+import AddService from "../pages/Admin/Services/AddService"
+import ServiceList from "../pages/Admin/Services/ServiceList"
+import UpdateServices from "../pages/Admin/Services/UpdateServices"
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +42,26 @@ export const router = createBrowserRouter([
       {
         path: "event-list",
         element: <EventItemList />,
+      },
+      {
+        path: "updatedservice/:id",
+        element: <UpdateEvent />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "add-service",
+        element: <AddService />,
+      },
+      {
+        path: "service-list",
+        element: <ServiceList />,
+      },
+      {
+        path: "updatedservice/:id",
+        element: <UpdateServices />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },

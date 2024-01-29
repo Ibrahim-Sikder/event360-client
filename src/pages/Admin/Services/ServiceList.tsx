@@ -1,17 +1,16 @@
 import { FaTrashAlt, FaEdit, FaFileInvoice } from "react-icons/fa"
-import "./AddEventItem.css"
 import { Link } from "react-router-dom"
 import { FaUserGear } from "react-icons/fa6"
 import { TextField } from "@mui/material"
 import { BellOff } from "lucide-react"
 import { useQuery } from "@tanstack/react-query"
+import { getServices } from "../../../api/admin/services/services.api"
 import Swal from "sweetalert2"
-import { getEvents } from "../../../api/admin/events/event.api"
 
-const EventItemList = () => {
+const ServiceList = () => {
   const { data, isLoading, isError, refetch } = useQuery({
-    queryKey: ["events"],
-    queryFn: getEvents,
+    queryKey: ["services"],
+    queryFn: getServices,
   })
 
   const handleDelete = (id) => {
@@ -25,7 +24,7 @@ const EventItemList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/events/${id}`, {
+        fetch(`http://localhost:5000/services/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,7 +38,6 @@ const EventItemList = () => {
     })
   }
 
-  console.log(data, isLoading, isError)
   if (isLoading) {
     return <p>Loading......</p>
   }
@@ -78,7 +76,9 @@ const EventItemList = () => {
         </div>
       </div>
       <div className="flex items-center justify-between mb-5 bg-[#F1F3F6] py-5 px-3">
-        <h3 className="text-3xl font-bold mb-3">All Event List:</h3>
+        <h3 className="text-3xl font-bold mb-3">
+          All Event List: {data.length}
+        </h3>
         <div className="flex items-center ">
           <TextField className="eventField" label="Search...." />
 
@@ -140,4 +140,4 @@ const EventItemList = () => {
   )
 }
 
-export default EventItemList
+export default ServiceList
