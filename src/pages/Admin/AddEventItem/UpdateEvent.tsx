@@ -28,7 +28,7 @@ const UpdateEvent = () => {
       image,
       description,
     }
-    fetch(`https://event-360-liart.vercel.app/events/${_id}`, {
+    fetch(`http://localhost:5000/events/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -92,17 +92,16 @@ const UpdateEvent = () => {
                 label={eventItem}
               />
             </div>
-            <div>
-              <input
+            <div className="mt-3">
+              <TextField
                 {...register("image")}
                 name="image"
-                placeholder="Products Descripton "
                 type="file"
-                className="inputField"
-                autoComplete="off"
+                fullWidth
+                className="eventField2"
               />
             </div>
-            <div className=" mt-8">
+            <div className=" mt-3">
               <label className="block"> Event Details </label>
               <textarea
                 {...register("description")}
@@ -112,7 +111,7 @@ const UpdateEvent = () => {
               />
             </div>
             <div className="savebtn mt-2">
-              <button type="submit">Add Event </button>
+              <button type="submit">Update Event </button>
             </div>
           </form>
         </div>

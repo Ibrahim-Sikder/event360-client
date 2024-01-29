@@ -1,4 +1,4 @@
 export const getEvents = async () => {
-    return fetch('https://event-360-liart.vercel.app/events')
+    return fetch('http://localhost:5000/events')
         .then((res) => res.json())
 }

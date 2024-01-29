@@ -29,7 +29,7 @@ const AddService = () => {
           description,
         }
         console.log(newServices)
-        fetch("https://event-360-liart.vercel.app/services", {
+        fetch("http://localhost:5000/services", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -59,10 +59,10 @@ const AddService = () => {
     <section>
       <div className=" addEventWraps">
         <div className="flex items-center mr-[80px]  justify-end topProductBtn">
-          <Link to="/dashboard/addjob">
+          <Link to="/admin/add-event">
             <button> Add Event </button>
           </Link>
-          <Link to="/dashboard/qutation">
+          <Link to="/admin">
             <button>Upcoming Event </button>
           </Link>
         </div>

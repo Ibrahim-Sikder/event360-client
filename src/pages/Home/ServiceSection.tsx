@@ -6,7 +6,11 @@ import useScrollGrow from "../../hooks/useScrollGrow"
 import { motion } from "framer-motion"
 import { buttonAnimation } from "../../hooks/buttonAnimation"
 
+
+
 const ServiceSection = () => {
+ 
+
   type TEvent = {
     _id: string
     name: string | number | boolean

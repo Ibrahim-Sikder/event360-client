@@ -26,7 +26,7 @@ const UpdateServices = () => {
       image,
       description,
     }
-    fetch(`https://event-360-liart.vercel.app/services/${_id}`, {
+    fetch(`http://localhost:5000/services/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

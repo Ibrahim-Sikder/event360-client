@@ -32,7 +32,7 @@ const ServiceList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://event-360-liart.vercel.app/services/${id}`, {
+        fetch(`http://localhost:5000/services/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -71,10 +71,10 @@ const ServiceList = () => {
       </div>
       <div className="flex items-center justify-between my-3 mb-8">
         <div className="flex items-center justify-center ">
-          <FaFileInvoice className="invoicIcon" />
+          <FaFileInvoice size="50" className="text-[#01DAF8]" />
           <div className="ml-2">
-            <h3 className="text-2xl font-bold"> Event </h3>
-            <span>Manage Event </span>
+            <h3 className="text-2xl font-bold"> Services </h3>
+            <span>Manage Services </span>
           </div>
         </div>
         <div className="eventHome">

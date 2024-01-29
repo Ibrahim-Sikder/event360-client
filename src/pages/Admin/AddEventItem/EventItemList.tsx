@@ -35,7 +35,7 @@ const EventItemList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://event-360-liart.vercel.app/events/${id}`, {
+        fetch(`http://localhost:5000/events/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -59,12 +59,12 @@ const EventItemList = () => {
 
   return (
     <div className="mt-5 mb-24 w-full">
-      <div className="flex justify-between border-b-2 pb-3">
+      <div className="flex justify-between border-b-2 pb-3 px-3">
         <div className="flex items-center mr-[80px]  justify-center topProductBtn">
-          <Link to="/dashboard/addjob">
+          <Link to="/admin/add-service">
             <button>Add Service </button>
           </Link>
-          <Link to="/dashboard/qutation">
+          <Link to="/admin">
             <button>Upcoming Event </button>
           </Link>
         </div>
@@ -75,7 +75,7 @@ const EventItemList = () => {
       </div>
       <div className="flex items-center justify-between my-3 mb-8">
         <div className="flex items-center justify-center ">
-          <FaFileInvoice className="invoicIcon" />
+          <FaFileInvoice size="50" className="text-[#01DAF8]" />
           <div className="ml-2">
             <h3 className="text-2xl font-bold"> Event </h3>
             <span>Manage Event </span>

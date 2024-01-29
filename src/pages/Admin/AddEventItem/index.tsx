@@ -30,7 +30,7 @@ const AddEventItem = () => {
           description,
         }
         console.log(newEvents)
-        fetch("https://event-360-liart.vercel.app/events", {
+        fetch("http://localhost:5000/events", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -100,17 +100,15 @@ const AddEventItem = () => {
                 label="Event Item "
               />
             </div>
-            <div>
-              <input
+            <div className="mt-3">
+              <TextField
                 {...register("image", { required: true })}
                 name="image"
-                placeholder="Products Descripton "
                 type="file"
-                className="inputField"
-                autoComplete="off"
+                fullWidth
               />
             </div>
-            <div className=" mt-8">
+            <div className=" mt-3">
               <label className="block"> Event Details </label>
               <textarea
                 {...register("description", { required: true })}

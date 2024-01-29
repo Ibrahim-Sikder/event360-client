@@ -6,8 +6,10 @@ const CustomerSupport = () => {
     <div className="bg-[#0F172A] py-14 text-white ">
       <Container className="">
         <div className="grid grid-cols-1 place-items-center place-content-center md:grid-cols-2 ">
-          <img src={customer} alt="managment" />
-          <div>
+          <div data-aos="zoom-in-right">
+            <img src={customer} alt="managment" />
+          </div>
+          <div data-aos="zoom-out-left">
             <h2 className="text-3xl sm:text-5xl font-bold">
               <span className="text-[#01DBF7]">24/7</span> Customer Support{" "}
             </h2>

@@ -1,16 +1,21 @@
 # React + TypeScript + Vite
 
 ### Technology: 
-# React + TypeScript + Vite
+# React + TypeScript + Vite 
 ### Feature:
-# Service Crud Operation
-# Admin can create/update/delete Service
-# Event Item Management 
-# Admin can create/update/delete Event Item
+## Service Crud Operation
+# Admin can create/update/delete Service.
+## Event Item Management 
+# Admin can create/update/delete Event Item.
+## Upcoming Event  
+# Admin can create/update/delete Upcoming Event.
+## Full responsive design in fixel perfect.
+## Using frammer motion & AOS for smooth animation.
+
 
 
 ### Client side url link: https://event360-jfgeza9fo-ibrahim-sikder.vercel.app/
-### Server side url link: https://event-360-liart.vercel.app/
+### Server side url link: http://localhost:5000/
 
 
 
