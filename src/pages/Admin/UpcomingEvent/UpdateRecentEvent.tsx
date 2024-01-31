@@ -1,34 +1,33 @@
-import "./AddEventItem.css"
 import TextField from "@mui/material/TextField"
 import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered"
 import { Link, useLoaderData } from "react-router-dom"
 import Swal from "sweetalert2"
 import { FieldValues, useForm } from "react-hook-form"
 
-const UpdateEvent = () => {
+const UpdateRecentEvent = () => {
   type TData = {
     _id: string
     name: string
-    eventItem: string
+    recentEventName: string
     image: string
     description: string
   }
   const events = useLoaderData()
-  const { _id, name, eventItem, description } = events as TData
+  const { _id, name, recentEventName, description } = events as TData
 
   const { register, handleSubmit } = useForm()
   const onSubmit = (data: FieldValues) => {
     const name = data.name
-    const eventItem = data.eventItem
+    const recentEventName = data.recentEventName
     const image = data.image
     const description = data.description
     const updatedServices = {
       name,
-      eventItem,
+      recentEventName,
       image,
       description,
     }
-    fetch(`https://event-360-liart.vercel.app/events/${_id}`, {
+    fetch(`https://event-360-liart.vercel.app/recent-events/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -52,25 +51,25 @@ const UpdateEvent = () => {
     <section>
       <div className=" addEventWraps">
         <div className="flex items-center mr-[80px]  justify-end topProductBtn">
-          <Link to="/dashboard/addjob">
-            <button> Update Event </button>
+          <Link to="/admin/add-service">
+            <button>Add Services </button>
           </Link>
-          <Link to="/dashboard/qutation">
+          <Link to="/admin/add-event">
             <button>Upcoming Event </button>
           </Link>
         </div>
         <div className="eventHeadWrap">
           <div className="flex items-center justify-center ">
             <div className="ml-2">
-              <span>Update Event </span>
+              <span>Update Recent Event </span>
             </div>
           </div>
         </div>
         <div className="my-3 flex justify-end mr-[80px] ">
-          <Link to="/dashboard/product">
+          <Link to="/admin/recent-event-list">
             <div className="manageEvent">
               <FormatListNumberedIcon className="listIcon" />
-              <h2>Event List </h2>
+              <h2>Recent Event </h2>
             </div>
           </Link>
         </div>
@@ -85,11 +84,11 @@ const UpdateEvent = () => {
                 label={name}
               />
               <TextField
-                {...register("eventItem")}
-                name="eventItem"
+                {...register("recentEventName")}
+                name="recentEventName"
                 className="eventField"
                 fullWidth
-                label={eventItem}
+                label={recentEventName}
               />
             </div>
             <div className="mt-3">
@@ -120,4 +119,4 @@ const UpdateEvent = () => {
   )
 }
 
-export default UpdateEvent
+export default UpdateRecentEvent

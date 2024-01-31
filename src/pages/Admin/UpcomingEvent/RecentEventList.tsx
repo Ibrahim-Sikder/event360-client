@@ -4,12 +4,14 @@ import { FaUserGear } from "react-icons/fa6"
 import { TextField } from "@mui/material"
 import { BellOff } from "lucide-react"
 import { useQuery } from "@tanstack/react-query"
-import { getServices } from "../../../api/admin/services/services.api"
 import Swal from "sweetalert2"
+import { Key } from "react"
+import { getRecentEvent } from "../../../api/admin/recentEvent/recent.event.api"
 
-const ServiceList = () => {
+const RecentEventList = () => {
   type TEvent = {
-    _id: string
+    _id: Key | null | undefined
+    id: Key | null | undefined
     name: string | number | boolean
     image: string | undefined
     eventItem: string
@@ -17,11 +19,11 @@ const ServiceList = () => {
   }
 
   const { data, isLoading, isError, refetch } = useQuery({
-    queryKey: ["services"],
-    queryFn: getServices,
+    queryKey: ["events"],
+    queryFn: getRecentEvent,
   })
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id: unknown) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this user!",
@@ -32,20 +34,21 @@ const ServiceList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://event-360-liart.vercel.app/services/${id}`, {
+        fetch(`https://event-360-liart.vercel.app/recent-events/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             refetch()
             if (data.deletedCount) {
-              Swal.fire("Deleted!", "Service has been deleted.", "success")
+              Swal.fire("Deleted!", "Event has been deleted.", "success")
             }
           })
       }
     })
   }
 
+  console.log(data, isLoading, isError)
   if (isLoading) {
     return <p>Loading......</p>
   }
@@ -55,12 +58,12 @@ const ServiceList = () => {
 
   return (
     <div className="mt-5 mb-24 w-full">
-      <div className="flex justify-between border-b-2 pb-3">
+      <div className="flex justify-between border-b-2 pb-3 px-3">
         <div className="flex items-center mr-[80px]  justify-center topProductBtn">
-          <Link to="/dashboard/addjob">
+          <Link to="/admin/add-service">
             <button>Add Service </button>
           </Link>
-          <Link to="/dashboard/qutation">
+          <Link to="/admin">
             <button>Upcoming Event </button>
           </Link>
         </div>
@@ -73,20 +76,18 @@ const ServiceList = () => {
         <div className="flex items-center justify-center ">
           <FaFileInvoice size="50" className="text-[#01DAF8]" />
           <div className="ml-2">
-            <h3 className="text-2xl font-bold"> Services </h3>
-            <span>Manage Services </span>
+            <h3 className="text-2xl font-bold"> Event </h3>
+            <span>Recent Event </span>
           </div>
         </div>
         <div className="eventHome">
           <span>Home / </span>
           <span>Event / </span>
-          <span>New Event </span>
+          <span>Recent Event </span>
         </div>
       </div>
       <div className="flex items-center justify-between mb-5 bg-[#F1F3F6] py-5 px-3">
-        <h3 className="text-3xl font-bold mb-3">
-          All Event List: {data.length}
-        </h3>
+        <h3 className="text-3xl font-bold mb-3">All Recent Event </h3>
         <div className="flex items-center ">
           <TextField className="eventField" label="Search...." />
 
@@ -123,10 +124,10 @@ const ServiceList = () => {
                 </td>
                 <td>{item.name} </td>
                 <td>{item.eventItem}</td>
-                <td>{item.description.slice(0, 10)}</td>
+                <td>{item.description}</td>
                 <td>
                   <div className="editIconWrap edit2">
-                    <Link to={`/admin/updatedservice/${item._id}`}>
+                    <Link to={`/admin/update-recent-event/${item._id}`}>
                       <FaEdit className="editIcon" />
                     </Link>
                   </div>
@@ -148,4 +149,4 @@ const ServiceList = () => {
   )
 }
 
-export default ServiceList
+export default RecentEventList

@@ -1,4 +1,3 @@
-import "./AddEventItem.css"
 import TextField from "@mui/material/TextField"
 import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered"
 import { Link } from "react-router-dom"
@@ -7,7 +6,7 @@ import Swal from "sweetalert2"
 
 const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN
 
-const AddEventItem = () => {
+const AddRecentEvent = () => {
   const { register, handleSubmit, reset } = useForm()
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
@@ -22,15 +21,15 @@ const AddEventItem = () => {
       .then((res) => res.json())
       .then((imageData) => {
         const imageUrl = imageData.data.url
-        const { name, description, eventItem } = data
+        const { name, description, recentEventName } = data
         const newEvents = {
           name,
           image: imageUrl,
-          eventItem,
+          recentEventName,
           description,
         }
         console.log(newEvents)
-        fetch("https://event-360-liart.vercel.app/events", {
+        fetch("https://event-360-liart.vercel.app/recent-events", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -60,17 +59,17 @@ const AddEventItem = () => {
     <section>
       <div className=" addEventWraps">
         <div className="flex items-center mr-[80px]  justify-end topProductBtn">
-          <Link to="/dashboard/addjob">
+          <Link to="/admin/add-service">
             <button> Add Service </button>
           </Link>
-          <Link to="/dashboard/qutation">
-            <button>Upcoming Event </button>
+          <Link to="/admin/add-event">
+            <button>Add Event </button>
           </Link>
         </div>
         <div className="eventHeadWrap">
           <div className="flex items-center justify-center ">
             <div className="ml-2">
-              <span>Add New Event </span>
+              <span>Add New Recent Event </span>
             </div>
           </div>
         </div>
@@ -78,7 +77,7 @@ const AddEventItem = () => {
           <Link to="/dashboard/product">
             <div className="manageEvent">
               <FormatListNumberedIcon className="listIcon" />
-              <h2>Event List </h2>
+              <h2> Recent Event </h2>
             </div>
           </Link>
         </div>
@@ -90,14 +89,14 @@ const AddEventItem = () => {
                 name="name"
                 className="eventField"
                 fullWidth
-                label="Event Name"
+                label="Name"
               />
               <TextField
-                {...register("eventItem", { required: true })}
-                name="eventItem"
+                {...register("recentEventName", { required: true })}
+                name="recentEventName"
                 className="eventField"
                 fullWidth
-                label="Event Item "
+                label="Recent Event "
               />
             </div>
             <div className="mt-3">
@@ -109,16 +108,16 @@ const AddEventItem = () => {
               />
             </div>
             <div className=" mt-3">
-              <label className="block"> Event Details </label>
+              <label className="block">Recent Event Details </label>
               <textarea
                 {...register("description", { required: true })}
                 name="description"
-                placeholder="Product Details "
+                placeholder="Recent Event Details "
                 className="eventDetailWrap"
               />
             </div>
             <div className="savebtn mt-2">
-              <button type="submit">Add Event </button>
+              <button type="submit">Add Recent Event </button>
             </div>
           </form>
         </div>
@@ -127,4 +126,4 @@ const AddEventItem = () => {
   )
 }
 
-export default AddEventItem
+export default AddRecentEvent

@@ -1,7 +1,14 @@
 # React + TypeScript + Vite
 
 ### Technology: 
-# React + TypeScript + Vite 
+## Frontend
+# Html, Css, Tailwind Css, React + TypeScript 
+## Backend 
+# Node js, Express js,
+## Database 
+# MongoDB
+## Animation 
+# Frammer Motion / AOS 
 ### Feature:
 ## Service Crud Operation
 # Admin can create/update/delete Service.
@@ -9,13 +16,14 @@
 # Admin can create/update/delete Event Item.
 ## Upcoming Event  
 # Admin can create/update/delete Upcoming Event.
-## Full responsive design in fixel perfect.
-## Using frammer motion & AOS for smooth animation.
+## Full responsive UI design in fixel perfect.
 
 
 
-### Client side url link: https://event360-jfgeza9fo-ibrahim-sikder.vercel.app/
-### Server side url link: https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/
+
+### Client side url link: https://event360-five.vercel.app/
+### Server side url link: https://event-360-liart.vercel.app/
+### Video url link: https://www.loom.com/share/b1986dc5dc504acb83f18f7fc3b6f36e
 
 
 

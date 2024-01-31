@@ -9,6 +9,9 @@ import UpdateEvent from "../pages/Admin/AddEventItem/UpdateEvent"
 import AddService from "../pages/Admin/Services/AddService"
 import ServiceList from "../pages/Admin/Services/ServiceList"
 import UpdateServices from "../pages/Admin/Services/UpdateServices"
+import AddRecentEvent from "../pages/Admin/UpcomingEvent/AddRecentEvent"
+import RecentEventList from "../pages/Admin/UpcomingEvent/RecentEventList"
+import UpdateRecentEvent from "../pages/Admin/UpcomingEvent/UpdateRecentEvent"
 
 export const router = createBrowserRouter([
   {
@@ -47,9 +50,7 @@ export const router = createBrowserRouter([
         path: "updateEvent/:id",
         element: <UpdateEvent />,
         loader: ({ params }) =>
-          fetch(
-            `https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/events/${params.id}`
-          ),
+          fetch(`https://event-360-liart.vercel.app/events/${params.id}`),
       },
       {
         path: "add-service",
@@ -63,8 +64,22 @@ export const router = createBrowserRouter([
         path: "updatedservice/:id",
         element: <UpdateServices />,
         loader: ({ params }) =>
+          fetch(`https://event-360-liart.vercel.app/services/${params.id}`),
+      },
+      {
+        path: "add-recent-event",
+        element: <AddRecentEvent />,
+      },
+      {
+        path: "recent-event-list",
+        element: <RecentEventList />,
+      },
+      {
+        path: "update-recent-event/:id",
+        element: <UpdateRecentEvent />,
+        loader: ({ params }) =>
           fetch(
-            `https://event-360-3jlpessl0-ibrahim-sikder.vercel.app/services/${params.id}`
+            `https://event-360-liart.vercel.app/recent-events/${params.id}`
           ),
       },
     ],

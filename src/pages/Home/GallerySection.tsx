@@ -10,20 +10,27 @@ import gallery7 from "../../assets/images/gallery7.png"
 import gallery8 from "../../assets/images/gallery3.png"
 import gallery9 from "../../assets/images/gallery6.png"
 import gallery10 from "../../assets/images/gallery10.png"
-import { motion } from "framer-motion"
+import { easeInOut, motion } from "framer-motion"
 
 const GallerySection = () => {
   const galleryAnimation = {
     hidden: {
       scale: 0,
+      opacity: 0.9,
     },
     visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         ease: "linear",
         duration: 2,
-        repeat: Infinity,
-        type: "spring",
+      },
+    },
+    hover: {
+      scale: 2,
+      x: -150,
+      transition: {
+        ease: easeInOut,
       },
     },
   }
@@ -86,24 +93,88 @@ const GallerySection = () => {
                   variants={galleryAnimation}
                   initial="hidden"
                   animate="visible"
+                  whileHover="hover"
                   src={gallery}
                   alt="gallery"
                 />
-                <motion.img src={gallery2} alt="gallery" />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery2}
+                  alt="gallery"
+                />
               </div>
               <div>
-                <img src={gallery3} alt="gallery" />
-                <img src={gallery4} alt="gallery" />
-                <img src={gallery5} alt="gallery" />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery3}
+                  alt="gallery"
+                />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery4}
+                  alt="gallery"
+                />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery5}
+                  alt="gallery"
+                />
               </div>
               <div>
-                <img src={gallery6} alt="gallery" />
-                <img src={gallery7} alt="gallery" />
-                <img src={gallery8} alt="gallery" />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery6}
+                  alt="gallery"
+                />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery7}
+                  alt="gallery"
+                />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery8}
+                  alt="gallery"
+                />
               </div>
               <div>
-                <img src={gallery9} alt="gallery" />
-                <img src={gallery10} alt="gallery" />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery9}
+                  alt="gallery"
+                />
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  src={gallery10}
+                  alt="gallery"
+                />
               </div>
             </div>
           </div>

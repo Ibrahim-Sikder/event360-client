@@ -7,7 +7,15 @@ import recent from "../../assets/images/recent.png"
 import recent2 from "../../assets/images/recent2.png"
 import recent3 from "../../assets/images/recent3.png"
 import recent4 from "../../assets/images/recent4.png"
+import { getRecentEvent } from "../../api/admin/recentEvent/recent.event.api"
+import { useQuery } from "@tanstack/react-query"
 const RecentEventSection = () => {
+  const { data } = useQuery({
+    queryKey: ["events"],
+    queryFn: getRecentEvent,
+  })
+  console.log(data?.data?.data)
+
   var settings = {
     infinite: true,
     slidesToShow: 4,
@@ -58,28 +66,28 @@ const RecentEventSection = () => {
               <img className=" object-cover" src={recent} alt="recent" />
               <div className="bg-[#070B15] text-white p-3 text-left ">
                 <p> Flower Decorations</p>
-                <small className="lead text-[#374254]">by Melvina Spring</small>
+                <small className="lead text-[#374254]">by Mr Jhon </small>
               </div>
             </div>
             <div className=" recentEventCard">
               <img className=" object-cover" src={recent2} alt="recent" />
               <div className="bg-[#070B15] text-white p-3 text-left ">
-                <p>Colorful Place </p>
-                <small className="lead text-[#374254]">by Melvina Spring</small>
+                <p> Flower Decorations</p>
+                <small className="lead text-[#374254]">by Ramim Hasan </small>
               </div>
             </div>
             <div className=" recentEventCard">
               <img className=" object-cover" src={recent3} alt="recent" />
               <div className="bg-[#070B15] text-white p-3 text-left ">
                 <p> Flower Decorations</p>
-                <small className="lead text-[#374254]">by Melvina Spring</small>
+                <small className="lead text-[#374254]">Ratul </small>
               </div>
             </div>
             <div className=" recentEventCard">
               <img className=" object-cover" src={recent4} alt="recent" />
               <div className="bg-[#070B15] text-white p-3 text-left ">
-                <p> Splash</p>
-                <small className="lead text-[#374254]">by Melvina Spring</small>
+                <p>  Flower Decorations</p>
+                <small className="lead text-[#374254]">Amin Ul Hoque</small>
               </div>
             </div>
           </Slider>
