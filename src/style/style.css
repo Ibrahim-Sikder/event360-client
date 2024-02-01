@@ -86,3 +86,28 @@ table {
 	line-height: 1.75rem;
 	border-radius: var(--rounded-box, 1rem);
 }
+
+.galleryWrapss{
+	height:526px;
+}
+.galleryCol{
+	background:#F0F0F5;
+	padding:10px;
+	color:black;
+}
+.galleryCol img{
+	height: 95%;
+	object-fit: cover;
+}
+.smallCol, .smallestCol{
+	height:253px;
+}
+.smallCol img, .smallestCol img{
+	height: 92%;
+	object-fit: cover;
+}
+@media only screen and (max-width:1024px){
+	.galleryWrapss{
+		height:100% !important;
+	}
+}
